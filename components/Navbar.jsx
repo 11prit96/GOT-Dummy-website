@@ -17,7 +17,8 @@ const Navbar = () => {
         zIndex: "10",
         position: "fixed",
         left:0,
-        top: 0,
+        top: {md: 0},
+        bottom: {xs: 0}
       }}
     >
       <Link href="/" style={{ textDecoration: "none" }}>

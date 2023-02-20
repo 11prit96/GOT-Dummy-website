@@ -20,6 +20,7 @@ export default function Books() {
       sx={{
         backgroundImage: "url('/assets/img_4.jpg')",
         backgroundPosition: "top right",
+        // backgroundRepeat: "no-repeat",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
