@@ -16,10 +16,9 @@ export default function Home() {
         <Box
           sx={{
             backgroundImage: "url('/assets/img_1.jpg')",
-            objectFit: "cover",
+            backgroundSize: 'cover',
             backgroundAttachment: "fixed",
-            backgroundPosition: "right",
-            // backgroundRepeat: "no-repeat",
+            backgroundPosition: {xs: "bottom right" , md:"right", lg:"center"},
             width: "100vw",
             height: "100vh",
           }}
@@ -52,10 +51,9 @@ export default function Home() {
         <Box
           sx={{
             backgroundImage: "url('/assets/img_2.jpg')",
-            objectFit: "cover",
+            backgroundSize: 'cover',
             backgroundAttachment: "fixed",
-            backgroundPosition: "top left",
-            // backgroundRepeat: "no-repeat",
+            backgroundPosition: {xs:"top left", lg:"center"},
             width: "100vw",
             height: "100vh",
           }}
@@ -88,10 +86,9 @@ export default function Home() {
         <Box
           sx={{
             backgroundImage: "url('/assets/img_3.jpg')",
-            objectFit: "cover",
+            backgroundSize: 'cover',
             backgroundAttachment: "fixed",
-            backgroundPosition: "top left",
-            // backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
             width: "100vw",
             height: "100vh",
           }}
@@ -127,10 +124,9 @@ export default function Home() {
         <Box
           sx={{
             backgroundImage: "url('/assets/img_5.jpg')",
-            objectFit: "cover",
+            backgroundSize: 'cover',
             backgroundAttachment: "fixed",
-            backgroundPosition: "left",
-            // backgroundRepeat: "no-repeat",
+            backgroundPosition: {xs:"center"},
             width: "100vw",
             height: "100vh",
           }}
