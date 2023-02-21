@@ -1,13 +1,10 @@
-import { Box, Card, Toolbar, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ImagesData from "@/constants/ImagesData";
-import Image from "next/image";
-import Img1 from "../public/assets/img_1.jpg";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>GOT</title>
         <link rel="icon" href="/favicon.ico" />

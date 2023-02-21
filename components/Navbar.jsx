@@ -2,8 +2,12 @@ import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import theme from "@/src/theme";
+import styles from "../styles/NavBar.module.css"
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter()
+
   return (
     <Box
       sx={{
@@ -22,7 +26,7 @@ const Navbar = () => {
       }}
     >
       <Link href="/" style={{ textDecoration: "none" }}>
-        <Typography variant="h4" sx={{ color: "whitesmoke" }}>
+        <Typography variant="h4"  className={router.asPath === "/" ? styles.active : styles.nonActive}>
           GOT UI
         </Typography>
       </Link>
@@ -33,18 +37,18 @@ const Navbar = () => {
           justifyContent: "space-between",
         }}
       >
-        <Link href="/books" activeClassName="active" style={{ textDecoration: "none" }}>
-          <Typography sx={{ color: "whitesmoke", marginRight: "2rem" }}>
+        <Link href="/books" style={{ textDecoration: "none" }}>
+          <Typography  className={router.asPath === "/books" ? styles.active : styles.nonActive} sx={{marginRight: "2rem" }}>
             Books
           </Typography>
         </Link>
-        <Link href="/houses" activeClassName="active" style={{ textDecoration: "none" }}>
-          <Typography sx={{ color: "whitesmoke", marginRight: "2rem" }}>
+        <Link href="/houses" style={{ textDecoration: "none" }}>
+          <Typography className={router.pathname === "/houses" ? styles.active : styles.nonActive} sx={{ marginRight: "2rem" }}>
             Houses
           </Typography>
         </Link>
-        <Link href="/characters" activeClassName="active" style={{ textDecoration: "none" }}>
-          <Typography sx={{ color: "whitesmoke" }}>Characters</Typography>
+        <Link href="/characters" style={{ textDecoration: "none" }}>
+          <Typography className={router.asPath === "/characters" ? styles.active : styles.nonActive}>Characters</Typography>
         </Link>
       </Box>
     </Box>
