@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <Box sx={{position: "relative", width: "100vw"}}>
+    <Box sx={{ position: "relative", width: "100%" }}>
       <Navbar />
       {children}
     </Box>

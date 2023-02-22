@@ -1,6 +1,8 @@
 import { Box, Card, Grid, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Img9 from "../../public/assets/img_9.jpg";
+import Image from "next/image";
 
 export default function Houses() {
   const [GOThouses, setGOTHouses] = useState([]);
@@ -9,7 +11,6 @@ export default function Houses() {
     async function getHouses() {
       const res = await fetch("https://anapioficeandfire.com/api/houses");
       const data = await res.json();
-      console.log("data", data);
       setGOTHouses(data);
     }
     getHouses();
@@ -18,17 +19,27 @@ export default function Houses() {
   return (
     <Box
       sx={{
-        backgroundImage: "url('/assets/img_9.jpg')",
-        backgroundPosition: "center",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <Grid container spacing={8} sx={{ my: "5rem", px: "5rem" }}>
+      <Image src={Img9} alt="houses" style={{ position: "fixed", top: "0" }} />
+      <Grid
+        container
+        spacing={8}
+        sx={{
+          my: "5rem",
+          px: "5rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: "5",
+        }}
+      >
         {GOThouses.map((item, index) => (
-          <Grid item xs="12" sm="6" md="4" key={item.url}>
+          <Grid item xs="12" sm="6" key={item.url}>
             <Link
               href={`/houses/${index + 1}`}
               style={{ textDecoration: "none" }}
@@ -39,8 +50,13 @@ export default function Houses() {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
+                  minHeight: "8.5rem",
                   padding: "1rem",
-                  background: "linear-gradient(to right, #4cb8c4, #dd5e89)",
+                  background: "whitesmoke",
+                  transition: "all 1s linear",
+                  "&:hover": {
+                    background: "linear-gradient(to right, #4cb8c4, #dd5e89)",
+                  },
                 }}
               >
                 <Typography variant="h5">{item.name}</Typography>

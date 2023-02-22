@@ -1,6 +1,8 @@
 import { Box, Card, Grid, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Img4 from "../../public/assets/img_4.jpg";
+import Image from "next/image";
 
 export default function Books() {
   const [books, setBooks] = useState([]);
@@ -14,22 +16,34 @@ export default function Books() {
     getBooks();
   }, []);
 
-  console.log(books);
   return (
     <Box
       sx={{
-        backgroundImage: "url('/assets/img_4.jpg')",
-        backgroundPosition: "top right",
-        // backgroundRepeat: "no-repeat",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <Grid container spacing={8} sx={{my: "5rem", px: "5rem"}}>
+      <Image
+        src={Img4}
+        style={{ position: "fixed", top: "0", right: "5" }}
+        alt="books"
+      />
+      <Grid
+        container
+        spacing={8}
+        sx={{
+          my: "5rem",
+          px: "5rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: "5",
+        }}
+      >
         {books.map((item, index) => (
-          <Grid item xs="12" md="6" key={index}>
+          <Grid item xs="12" md="4" key={index}>
             <Link
               href={`/books/${index + 1}`}
               style={{ textDecoration: "none" }}
@@ -41,7 +55,12 @@ export default function Books() {
                   alignItems: "center",
                   justifyContent: "center",
                   padding: "1rem",
-                  background: "linear-gradient(to right, #4cb8c4, #dd5e89)",
+                  height: "8rem",
+                  background: "whitesmoke",
+                  transition: "all 1s linear",
+                  "&:hover": {
+                    background: "linear-gradient(to right, #4cb8c4, #dd5e89)",
+                  },
                 }}
               >
                 <Typography variant="h5">{item.name}</Typography>

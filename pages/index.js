@@ -16,7 +16,7 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundAttachment: "fixed",
             backgroundPosition: {xs: "bottom right" , md:"right", lg:"center"},
-            width: "100vw",
+            width: "100%",
             height: "100vh",
           }}
         >
@@ -51,7 +51,7 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundAttachment: "fixed",
             backgroundPosition: {xs:"top left", lg:"center"},
-            width: "100vw",
+            width: "100v%",
             height: "100vh",
           }}
         >
@@ -86,7 +86,7 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundAttachment: "fixed",
             backgroundPosition: "center",
-            width: "100vw",
+            width: "100%",
             height: "100vh",
           }}
         >
@@ -124,7 +124,7 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundAttachment: "fixed",
             backgroundPosition: {xs:"center"},
-            width: "100vw",
+            width: "100%",
             height: "100vh",
           }}
         >
